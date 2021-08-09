@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://example.com/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/image-20210809174509906.png">
 <meta property="og:image" content="http://example.com/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/image-20210809175642547.png">
 <meta property="article:published_time" content="2021-08-09T06:17:08.000Z">
-<meta property="article:modified_time" content="2021-08-09T10:32:19.544Z">
+<meta property="article:modified_time" content="2021-08-09T10:35:15.622Z">
 <meta property="article:author" content="qinghu-code">
 <meta property="article:tag" content="总结 记录">
 <meta name="twitter:card" content="summary">
@@ -373,7 +373,7 @@
 <p><img src="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/image-20210809170628076.png" alt="image-20210809170628076"></p>
 </blockquote>
 </li>
-<li><p>运行命令   ssh -T <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;</a>   添加信任</p>
+<li><p>运行命令   ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#99;&#111;&#x6d;">&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#99;&#111;&#x6d;</a>   添加信任</p>
 </li>
 </ol>
 </blockquote>
@@ -412,23 +412,23 @@
 </li>
 <li><p>打开__config.yml 配置文件 找到 post_asset_folder：false 将其改为</p>
 <blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br><span class="line">marked:</span><br><span class="line">  prependRoot: true</span><br><span class="line">  postAsset: true</span><br></pre></td></tr></table></figure></blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure></blockquote>
 </li>
 </ul>
 </li>
 <li><p>命令生成md文件</p>
+</li>
+</ol>
 <ul>
-<li>```bash<br>hexo new ‘文章标题’<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">可以在 hexo博客主目录下/source/_posts 下看到两个同名文件，同名文件夹是用来存放同名md文件所引用的图片资源的。</span><br><span class="line"></span><br><span class="line">如果不想发布可以先生成草稿</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-hexo new draft “文章标题”<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">hexo博客主目录下/source/_drafts下可以看到对应文件     </span><br><span class="line"></span><br><span class="line">想发布时</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-hexo publish [layout] <filename><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">     即可发布</span><br><span class="line"></span><br><span class="line">3. 配置typora  md文本编辑器</span><br><span class="line"></span><br><span class="line">   &gt; ![image-20210809173254840](image-20210809173254840.png)</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; **在文本中想使用图片时，可以直接复制粘贴到对应位置，即可使用**</span><br><span class="line"></span><br><span class="line">   * 注意事项：</span><br><span class="line">     * 博客md文件发布时，由于图片直接使用 图片名 即可，所以要删除前缀</span><br><span class="line">     * 复制之后为：![image-20210809173602124](image-20210809173602124.png)</span><br><span class="line">     * 上传时要使用![image-20210809173709150](image-20210809173709150.png)</span><br><span class="line">     * 所以在Typora编辑器内 `&lt;C-f&gt;`快捷键，将所有的`文章名/`替换为空即可删除。![image-20210809173932950](image-20210809173932950.png)</span><br><span class="line"></span><br><span class="line">4. 编写文本后，上传到github</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<li>```bash<br> hexo new ‘文章标题’<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> 可以在 hexo博客主目录下/source/_posts 下看到两个同名文件，同名文件夹是用来存放同名md文件所引用的图片资源的。</span><br><span class="line"></span><br><span class="line">如果不想发布可以先生成草稿</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+ hexo new draft “文章标题”<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> hexo博客主目录下/source/_drafts下可以看到对应文件     </span><br><span class="line"></span><br><span class="line">想发布时</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+ hexo publish [layout] <filename><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">     即可发布</span><br><span class="line"></span><br><span class="line">&gt;3. 配置typora  md文本编辑器</span><br><span class="line"></span><br><span class="line">  &gt; ![image-20210809173254840](image-20210809173254840.png)</span><br><span class="line">   &gt;</span><br><span class="line">  &gt; **在文本中想使用图片时，可以直接复制粘贴到对应位置，即可使用**</span><br><span class="line"></span><br><span class="line">   * 注意事项：</span><br><span class="line">     * 博客md文件发布时，由于图片直接使用 图片名 即可，所以要删除前缀</span><br><span class="line">    * 复制之后为：![image-20210809173602124](image-20210809173602124.png)</span><br><span class="line">     * 上传时要使用![image-20210809173709150](image-20210809173709150.png)</span><br><span class="line">     * 所以在Typora编辑器内 `&lt;C-f&gt;`快捷键，将所有的`文章名/`替换为空即可删除。![image-20210809173932950](image-20210809173932950.png)</span><br><span class="line"></span><br><span class="line">4. 编写文本后，上传到github</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>hexo clean<br>hexo g -d<br>```</p>
 <p>部署前最好能先执行一下 hexo clean 命令，清除缓存文件 (db.json) 和已生成的静态文件 (public)</p>
 </blockquote>
 </filename></li>
 </ul>
-</li>
-</ol>
 </blockquote>
 <h3 id="9-配置专属域名（拓展）"><a href="#9-配置专属域名（拓展）" class="headerlink" title="9. 配置专属域名（拓展）"></a>9. 配置专属域名（拓展）</h3><blockquote>
 <ol>
