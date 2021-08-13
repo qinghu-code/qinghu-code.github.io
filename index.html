@@ -269,51 +269,9 @@
     
     <p>imageX 是火山引擎的一项图片服务，主要应用于网络图片的压缩处理，使用字节公司自研的图片压缩算法，以及新一代BVC系列编解码器，相比JPEG体积最高可减小90%以上，相比WebP体积仍可降低30%，在节省传输流量成本的同时极大提升加载速度。</p>
 <p>为了测试其优越性能，我找了四组图片以作验证：小于100KB，100KB-500KB，500KB-1MB，1MB-5MB。每组图片选择三张不同的图片分别观察效果。</p>
-<p>结论如下：</p>
-<ol>
-<li>图像较小时 （500KB以下）：</li>
-</ol>
-<ul>
-<li>优势：<ul>
-<li>imageX推荐的 avif 以及 heic 格式，可以在jpg的基础上再次压缩30%左右；</li>
-<li>压缩质量选择100时，webp压缩格式的图片反而比原图像更大，heic 可以提供30%左右的压缩量，avif则提供50%左右</li>
-<li>压缩质量选择75时，avif和webp格式压缩能力接近，heic的压缩量比webp高20%左右</li>
-<li>avif和heic的压缩能力更强，而且画质和原图的画质基本不变</li>
-</ul>
-</li>
-<li>劣势：<ul>
-<li>普通图片调用ImageX转化为avif格式的所需时间较长</li>
-<li>heic格式的图片压缩不够稳定，在某些图片上，图片细节有较明显形变；但是形变后，画质与原图类似，不易区分。</li>
-</ul>
-</li>
-</ul>
-<ol start="2">
-<li>图像较大时 （500KB以上）</li>
-</ol>
-<ul>
-<li><p>优势：</p>
-<ul>
-<li>imageX推荐的 avif 以及 heic 格式，可以在jpg的基础上再次压缩40%左右；</li>
-<li>压缩质量选择100时，webp压缩格式的图片压缩的格式不稳定，有较原图像大的，也有较原图像小的。heic可以提供15%以上的压缩量，avif可以提供40%以上，图片越大，表现越稳定。</li>
-<li>压缩质量选择75时，avif较webp压缩能力稍强，heic的压缩量比webp高20%左右</li>
-<li>avif和heic的压缩能力更强，而且画质和原图的画质基本不变</li>
-</ul>
-</li>
-<li><p>劣势：</p>
-<ul>
-<li>普通图片调用ImageX转化为avif格式的所需时间相当长，甚至可能因为网络原因或其他因素，格式转化发生失败</li>
-<li>heic格式的图片压缩依旧不稳定，在某些图片上，图片细节有较明显形变；但是形变后，画质与原图类似，不易区分。</li>
-</ul>
-</li>
-</ul>
-<ol start="3">
-<li>综上所述：<ul>
-<li>压缩质量要求并不严格时，可以选择保留75 :  avif格式和webp压缩格式大小类似，可以选择heic格式，但是某些图片有细微形变，但转化完成后，难以区分。</li>
-<li>压缩质量要求严格时，可以选择保留100：可以选择avif格式压缩，压缩能力强，图像质量稳定，但转化时间较长。</li>
-</ul>
-</li>
-</ol>
-
+    
+    <a class="article-more-a" href="/2021/08/13/iamgeX%E5%9B%BE%E5%83%8F%E5%8E%8B%E7%BC%A9%E6%8A%80%E6%9C%AF%E4%BD%93%E9%AA%8C%E6%80%BB%E7%BB%93/#more">more >></a>
+    
     
 
     
@@ -401,59 +359,9 @@
     <h3 id="1-什么是seo"><a href="#1-什么是seo" class="headerlink" title="1. 什么是seo"></a>1. 什么是seo</h3><ul>
 <li>seo即Search Engine Optimization ，搜索引擎优化是一种利用搜索引擎的搜索规则来提高目前网站在有关搜索引擎内的自然排名的方式。SEO的目的理解是：为网站提供生态式的自我营销解决方案，让网站在行业内占据领先地位。在我们的博客这里，由于是个人网页，且基于github pages而搭建，百度爬虫爬取不到我们的博客网页，为了让百度等国内搜索引擎能搜索到，所以做seo优化还是有必要。</li>
 </ul>
-<h3 id="2-基于coding平台，搭建博客项目"><a href="#2-基于coding平台，搭建博客项目" class="headerlink" title="2. 基于coding平台，搭建博客项目"></a>2. 基于coding平台，搭建博客项目</h3><blockquote>
-<ol>
-<li><p>首先创建项目</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811101829864.png" alt="image-20210811101829864"></p>
-</li>
-<li><p>创建仓库，注意命名方式 yourname.coding.me</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811101928852.png" alt="image-20210811101928852"></p>
-</li>
-<li><p>将coding仓库和github的博客仓库同步</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102127875.png" alt="image-20210811102127875"></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102148728.png" alt="image-20210811102148728"></p>
-</li>
-<li><p>添加ssh 公钥</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102924763.png" alt="image-20210811102924763"></p>
-</li>
-<li><p>项目托管</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102400286.png" alt="image-20210811102400286"></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102439408.png" alt="image-20210811102439408"></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102753699.png" alt="image-20210811102753699"></p>
-</li>
-<li><p>自定义域名</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103318530.png" alt="image-20210811103318530"></p>
-<p>绑定自己的域名</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103357410.png" alt="image-20210811103357410"></p>
-<p>进入<a target="_blank" rel="noopener" href="https://console.dnspod.cn/dns/list">DNS解析管理平台</a></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103730749.png" alt="image-20210811103730749"></p>
-<p>添加记录</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103819097.png" alt="image-20210811103819097"></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103921310.png" alt="image-20210811103921310"></p>
-<p>查看效果</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811104020757.png" alt="image-20210811104020757"></p>
-</li>
-</ol>
-</blockquote>
-<h3 id="3-将个人博客添加到百度站长平台"><a href="#3-将个人博客添加到百度站长平台" class="headerlink" title="3. 将个人博客添加到百度站长平台"></a>3. 将个人博客添加到百度站长平台</h3><blockquote>
-<ul>
-<li><p> <a target="_blank" rel="noopener" href="https://ziyuan.baidu.com/site/index">百度站长</a></p>
-</li>
-<li><p>添加网站</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210810100735886.png" alt="image-20210810100735886"></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210813155709787.png" alt="image-20210813155709787"></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210810101800509.png" alt="image-20210810101800509"></p>
-</li>
-<li><p>将meta 这个字段加入到hexo主题的header.ejs 中</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811104227066.png" alt="image-20210811104227066"></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811104256722.png" alt="image-20210811104256722"></p>
-<p><strong>如果验证不了，可以选择使用文件验证</strong></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811112731293.png" alt="image-20210811112731293"></p>
-<p>添加验证</p>
-</li>
-</ul>
-</blockquote>
-<h4 id><a href="#" class="headerlink" title></a></h4>
+    
+    <a class="article-more-a" href="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/#more">more >></a>
+    
     
 
     
@@ -551,151 +459,9 @@
 <p>npm -v </p>
 <p>能看到相关版本号即为成功</p>
 </blockquote>
-<h3 id="3-安装Hexo框架"><a href="#3-安装Hexo框架" class="headerlink" title="3. 安装Hexo框架"></a>3. 安装Hexo框架</h3><blockquote>
-<ol>
-<li>在桌面或文件夹下，右键 GIt bash</li>
-<li>安装hexo    npm install -g hexo-cli</li>
-<li>创建博客文件夹  hexo init myBlog   进入  cd myBlog </li>
-<li>npm install</li>
-</ol>
-<p>文件夹目录结构为：</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml <span class="comment"># 网站的配置信息，您可以在此配置大部分的参数。 </span></span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds <span class="comment"># 模版文件夹</span></span><br><span class="line">├── <span class="built_in">source</span>  <span class="comment"># 资源文件夹，除 _posts 文件，其他以下划线_开头的文件或者文件夹不会被编译打包到public文件夹</span></span><br><span class="line">|   ├── _drafts <span class="comment"># 草稿文件</span></span><br><span class="line">|   └── _posts <span class="comment"># 文章Markdowm文件 </span></span><br><span class="line">└── themes  <span class="comment"># 主题文件夹</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-</blockquote>
-<h3 id="4-测试hexo安装成功"><a href="#4-测试hexo安装成功" class="headerlink" title="4. 测试hexo安装成功"></a>4. 测试hexo安装成功</h3><blockquote>
-<ol>
-<li><p>博客文件夹下 ：hexo s </p>
-</li>
-<li><p>访问本地部署：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a>  查看效果 访问成功则hexo安装成功</p>
-</li>
-<li><p>（可选）更换hexo的页面主题</p>
-<blockquote>
-<ol>
-<li><p>访问网站：<a target="_blank" rel="noopener" href="https://hexo.io/themes">hexo主题网站</a> </p>
-</li>
-<li><p>选择喜欢的主题点击图片预览</p>
-</li>
-<li><p>点击下方文字进入github，有相关安装指导</p>
-<blockquote>
-<p><img src="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/hexo_theme_click.jpg" alt="主题选择"></p>
-<p><img src="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/image-20210809163405130.png" alt="image-20210809163405130"></p>
-</blockquote>
-</li>
-<li><p>注意事项：</p>
-<ul>
-<li>主题和hexo博客都有一个_config.yml文件，主题相关的配置一般在theme文件夹内操作，hexo博客的__config仅仅用于博客相关配置</li>
-<li>主题内部layout/_partial文件夹内的ejs文件是配置博客主页的脚本，可在其中配置自己的修改，比如音乐外链。</li>
-</ul>
-</li>
-</ol>
-</blockquote>
-</li>
-</ol>
-</blockquote>
-<h3 id="5-在github上创建博客专用仓库"><a href="#5-在github上创建博客专用仓库" class="headerlink" title="5. 在github上创建博客专用仓库"></a>5. 在github上创建博客专用仓库</h3><blockquote>
-<ol>
-<li><p>查看你的github用户名</p>
-</li>
-<li><p>创建新的仓库   <strong>注意仓库的名称必须为  yourname.github.io</strong></p>
-<blockquote>
-<p><img src="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/image-20210809164307365.png" alt="image-20210809164307365"></p>
-</blockquote>
-</li>
-<li><p>修改默认分支main 为 master</p>
-<blockquote>
-<p><img src="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/image-20210809165418940.png" alt="image-20210809165418940"></p>
-</blockquote>
-</li>
-</ol>
-</blockquote>
-<h3 id="6-配置ssh-key"><a href="#6-配置ssh-key" class="headerlink" title="6. 配置ssh key"></a>6. 配置ssh key</h3><blockquote>
-<ol>
-<li><p> 博客文件夹下  运行 cat ~/.ssh/id_rsa.pub    查看本机ssh key</p>
-</li>
-<li><p>如果之前没有创建，则执行命令配置本地账户   如果配置跳过此步骤</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;用户名&quot;</span><br><span class="line">git config --global user.email &quot;邮箱地址&quot;</span><br><span class="line">ssh-keygen -t rsa -C &#x27;上面的邮箱&#x27;</span><br><span class="line">   执行之后，会有三次询问，全部点击回车键</span><br></pre></td></tr></table></figure></li>
-<li><p>再次执行 cat ~/.ssh/id_rsa.pub  查看是否生成ssh key</p>
-</li>
-<li><p>到本机的c:user/用户目录/.ssh 下查看 </p>
-<blockquote>
-<p><img src="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/image-20210809170214276.png" alt="image-20210809170214276"></p>
-</blockquote>
-</li>
-<li><p>打开id_rsa.pub 文件，将其中的所有字符（公钥) 复制到粘贴板</p>
-</li>
-<li><p>将公钥粘贴到github的ssh keys</p>
-<blockquote>
-<p><img src="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/image-20210809170628076.png" alt="image-20210809170628076"></p>
-</blockquote>
-</li>
-<li><p>运行命令   ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#98;&#46;&#x63;&#111;&#x6d;">&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#98;&#46;&#x63;&#111;&#x6d;</a>   添加信任</p>
-</li>
-</ol>
-</blockquote>
-<h3 id="7-部署到Github"><a href="#7-部署到Github" class="headerlink" title="7. 部署到Github"></a>7. 部署到Github</h3><blockquote>
-<ol>
-<li><p>打开hexo博客主目录的__config.yml文件，拉到最后面</p>
-<blockquote>
-<p><img src="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/image-20210809171110315.png" alt="image-20210809171110315"></p>
-<p><strong>原样填写，将用户名改为你自己</strong>  </p>
-</blockquote>
-</li>
-<li><p>注意事项</p>
-<ul>
-<li>这里使用ssh协议，不适用https协议配置repo，否则不成功</li>
-</ul>
-</li>
-<li><p>安装部署插件 hexo-deployer-git </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
-<li><p>部署上传</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li>
-<li><p>github上设置你的博客分支</p>
-<blockquote>
-<p><img src="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/image-20210809174509906.png" alt="image-20210809174509906"></p>
-</blockquote>
-</li>
-<li><p>访问博客</p>
-<p><a target="_blank" rel="noopener" href="https://yourname.github.io/">https://yourname.github.io</a></p>
-</li>
-</ol>
-</blockquote>
-<h3 id="8-开始写作"><a href="#8-开始写作" class="headerlink" title="8. 开始写作"></a>8. 开始写作</h3><blockquote>
-<ol>
-<li><p>配置md的图片插件  hexo主目录下打开 git bash</p>
-<ul>
-<li><p>安装插件   npm install hexo-asset-image –save</p>
-</li>
-<li><p>打开__config.yml 配置文件 找到 post_asset_folder：false 将其改为</p>
-<blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure></blockquote>
-</li>
-</ul>
-</li>
-<li><p>命令生成md文件</p>
-</li>
-</ol>
-<ul>
-<li>```bash<br> hexo new ‘文章标题’<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> 可以在 hexo博客主目录下/source/_posts 下看到两个同名文件，同名文件夹是用来存放同名md文件所引用的图片资源的。</span><br><span class="line"></span><br><span class="line">如果不想发布可以先生成草稿</span><br><span class="line"></span><br></pre></td></tr></table></figure>
- hexo new draft “文章标题”<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> hexo博客主目录下/source/_drafts下可以看到对应文件     </span><br><span class="line"></span><br><span class="line">想发布时</span><br><span class="line"></span><br></pre></td></tr></table></figure>
- hexo publish [layout] <filename><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">     即可发布</span><br><span class="line"></span><br><span class="line">&gt;3. 配置typora  md文本编辑器</span><br><span class="line"></span><br><span class="line">  &gt; ![image-20210809173254840](image-20210809173254840.png)</span><br><span class="line">   &gt;</span><br><span class="line">  &gt; **在文本中想使用图片时，可以直接复制粘贴到对应位置，即可使用**</span><br><span class="line"></span><br><span class="line">   * 注意事项：</span><br><span class="line">     * 博客md文件发布时，由于图片直接使用 图片名 即可，所以要删除前缀</span><br><span class="line">    * 复制之后为：![image-20210809173602124](image-20210809173602124.png)</span><br><span class="line">     * 上传时要使用![image-20210809173709150](image-20210809173709150.png)</span><br><span class="line">     * 所以在Typora编辑器内 `&lt;C-f&gt;`快捷键，将所有的`文章名/`替换为空即可删除。![image-20210809173932950](image-20210809173932950.png)</span><br><span class="line"></span><br><span class="line">4. 编写文本后，上传到github</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>hexo clean<br>hexo g -d<br>```</p>
-<p>部署前最好能先执行一下 hexo clean 命令，清除缓存文件 (db.json) 和已生成的静态文件 (public)</p>
-</blockquote>
-</filename></li>
-</ul>
-</blockquote>
-<h3 id="9-配置专属域名（拓展）"><a href="#9-配置专属域名（拓展）" class="headerlink" title="9. 配置专属域名（拓展）"></a>9. 配置专属域名（拓展）</h3><blockquote>
-<ol>
-<li><p>注册你的专属域名，可以到<a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/domain/?spm=5176.100251.111252.17.365b4f157s4Od7">阿里云</a>注册</p>
-</li>
-<li><p>在github上配置你购买的域名即可</p>
-<p><img src="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/image-20210809175642547.png" alt="image-20210809175642547"></p>
-</li>
-</ol>
-</blockquote>
-
+    
+    <a class="article-more-a" href="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/#more">more >></a>
+    
     
 
     
