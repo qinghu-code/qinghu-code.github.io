@@ -478,30 +478,31 @@
 
 
 
-
+  <div id="giteement-ctn"></div>
   
-  <div id="gitment-ctn"></div>
-  
-    <!-- 中文 -->
-    <link rel="stylesheet" href="/lib/gitment.css">
-    <script src="/lib/gitment.js"></script>
+    <link rel="stylesheet" href="/lib/default.css">
+    <script src="/lib/giteement.browser.js"></script>
   
   <script>
-    <!-- id: "iamgeX图像压缩技术体验总结" -->
-    var gitment = new Gitment({
-      id: "20210813105749",
-      owner: 'qinghu-code',
-      repo: 'qinghu-code.github.io',
-      oauth: {
-        client_id: '8c3e21709da0dd192de3',
-        client_secret: 'dadb7cf59a92c3700cbf5e5064b5f74570577fba',
-      },
-    })
-    gitment.render('gitment-ctn')
+  <!-- id: "iamgeX图像压缩技术体验总结" -->
+  var giteement = new Giteement({
+    id: '20210813105749',
+    owner: 'qinghu-code',
+    repo: 'myBlobGitment',
+    backcall_uri: 'https://qinghu-code.github.io',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: 'e4c46e080025abc2b90adb6db47d918a8a741acb98837e419dd0233df984b7ee',
+      client_secret: '03e07c54843411381109ffb53092ddb681eb32b54c4b464705bfd084bd33b7a6'
+    },
+  })
+  giteement.render('giteement-ctn')
   </script>
 
 
-  
+
+
+
 
 
 
