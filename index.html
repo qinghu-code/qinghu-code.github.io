@@ -238,6 +238,107 @@
             
 
   
+    <article id="post-通过fileHttpServer项目建立自己的私人文件服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/01/16/%E9%80%9A%E8%BF%87fileHttpServer%E9%A1%B9%E7%9B%AE%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E4%BA%BA%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/" target="_blank">通过fileHttpServer项目搭建自己的私人文件服务器</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/01/16/%E9%80%9A%E8%BF%87fileHttpServer%E9%A1%B9%E7%9B%AE%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E4%BA%BA%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
+        <time datetime="2022-01-16T04:28:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-16</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="1-首先安装golang环境"><a href="#1-首先安装golang环境" class="headerlink" title="1. 首先安装golang环境"></a>1. 首先安装golang环境</h3><ul>
+<li> 下载go安装包   (如果之前安装过golang  可以先卸载 <code>yum -y remove golang</code>)</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -c https://storage.googleapis.com/golang/go1.11.5.linux-amd64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>解压到 /user/local/目录下</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -C /usr/local/ -zxvf go1.11.5.linux-amd64.tar.gz </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>添加go的环境变量到$PATH 中</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile.d/go.sh        ### 创建文件</span><br><span class="line">export PATH=$PATH:/usr/local/go/bin   ### 打开创建的go.sh文件 里面添加 保存退出 ：wq</span><br><span class="line">source /etc/profile.d/go.sh     ###  使文件生效</span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2022/01/16/%E9%80%9A%E8%BF%87fileHttpServer%E9%A1%B9%E7%9B%AE%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E4%BA%BA%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">文件服务器</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/01/16/%E9%80%9A%E8%BF%87fileHttpServer%E9%A1%B9%E7%9B%AE%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E4%BA%BA%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-关于springboot访问静态资源的注意事项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -750,6 +851,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">springboot thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">文件服务器</a>
               </li>
             
             <div class="clearfix"></div>
