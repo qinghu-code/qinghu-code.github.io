@@ -238,6 +238,101 @@
             
 
   
+    <article id="post-docker安装redis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/01/17/docker%E5%AE%89%E8%A3%85redis/" target="_blank">docker安装redis</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/01/17/docker%E5%AE%89%E8%A3%85redis/" class="archive-article-date">
+        <time datetime="2022-01-17T15:35:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-17</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="1-拉取redis的镜像"><a href="#1-拉取redis的镜像" class="headerlink" title="1. 拉取redis的镜像"></a>1. 拉取redis的镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis:latest</span><br><span class="line">docker images          ##  查看是否有redis:latest的镜像</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-宿主机创建数据目录"><a href="#2-宿主机创建数据目录" class="headerlink" title="2. 宿主机创建数据目录"></a>2. 宿主机创建数据目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /home/dockerdata/redis/conf</span><br><span class="line">mkdir -p /home/dockerdata/redis/data</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-从官网获取-redis-conf-配置文件并配置"><a href="#3-从官网获取-redis-conf-配置文件并配置" class="headerlink" title="3. 从官网获取 redis.conf 配置文件并配置"></a>3. 从官网获取 <a target="_blank" rel="noopener" href="http://download.redis.io/redis-stable/redis.conf">redis.conf</a> 配置文件并配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cd /home/dockerdate/redis/conf   //进入目录</span><br><span class="line">wget http://download.redis.io/redis-stable/redis.conf   //下载redis配置文件</span><br><span class="line">vim redis.conf  //修改配置文件</span><br><span class="line"></span><br><span class="line">bind 127.0.0.1 #注释掉这部分，这是限制redis只能本地访问</span><br><span class="line">protected-mode no #默认yes，开启保护模式，限制为本地访问</span><br><span class="line">daemonize no#默认no，改为yes意为以守护进程方式启动，可后台运行，除非kill进程（可选），改为yes会使配置文件方式启动redis失败</span><br><span class="line">dir  ./ #输入本地redis数据库存放文件夹（可选）</span><br><span class="line">appendonly yes #redis持久化（可选）</span><br><span class="line">requirepass 123456  # 设置密码</span><br><span class="line">保存退出</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-启动容器并挂载目录"><a href="#4-启动容器并挂载目录" class="headerlink" title="4. 启动容器并挂载目录"></a>4. 启动容器并挂载目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 6379:6379 --name redis -v /home/dockerdata/redis/conf/redis.conf:/etc/redis/redis.conf -v /home/dockerdata/redis/data:/data -d redis redis-server /etc/redis/redis.conf --appendonly yes</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> redis-server /etc/redis/redis.conf  以配置文件启动redis，加载容器内的conf文件，最终找到的是挂载的目录/home/docker..</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> appendonly yes 开启redis 持久化</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-查看redis各项配置"><a href="#5-查看redis各项配置" class="headerlink" title="5.查看redis各项配置"></a>5.查看redis各项配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker ps # 查看运行中容器 #docker restart contianerId/name重启容器 docker logs containerId查看容器启动失败日志</span><br><span class="line">docker exec -it contianerId /bin/bash       # 进入容器</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">docker redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/01/17/docker%E5%AE%89%E8%A3%85redis/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-docker-安装-mysql5-7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -954,6 +1049,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">docker mysql5.7</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">docker redis</a>
               </li>
             
             <div class="clearfix"></div>

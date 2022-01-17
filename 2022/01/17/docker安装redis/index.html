@@ -7,43 +7,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>个人博客的seo优化 | Hexo</title>
+  <title>docker安装redis | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="1. 什么是seo seo即Search Engine Optimization ，搜索引擎优化是一种利用搜索引擎的搜索规则来提高目前网站在有关搜索引擎内的自然排名的方式。SEO的目的理解是：为网站提供生态式的自我营销解决方案，让网站在行业内占据领先地位。在我们的博客这里，由于是个人网页，且基于github pages而搭建，百度爬虫爬取不到我们的博客网页，为了让百度等国内搜索引擎能搜索到，所以做">
+  <meta name="description" content="1. 拉取redis的镜像12docker pull redis:latestdocker images          ##  查看是否有redis:latest的镜像  2. 宿主机创建数据目录12mkdir -p &#x2F;home&#x2F;dockerdata&#x2F;redis&#x2F;confmkdir -p &#x2F;home&#x2F;dockerdata&#x2F;redis&#x2F;data  3. 从官网获取 redis.conf 配置文件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="个人博客的seo优化">
-<meta property="og:url" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/index.html">
+<meta property="og:title" content="docker安装redis">
+<meta property="og:url" content="http://example.com/2022/01/17/docker%E5%AE%89%E8%A3%85redis/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1. 什么是seo seo即Search Engine Optimization ，搜索引擎优化是一种利用搜索引擎的搜索规则来提高目前网站在有关搜索引擎内的自然排名的方式。SEO的目的理解是：为网站提供生态式的自我营销解决方案，让网站在行业内占据领先地位。在我们的博客这里，由于是个人网页，且基于github pages而搭建，百度爬虫爬取不到我们的博客网页，为了让百度等国内搜索引擎能搜索到，所以做">
+<meta property="og:description" content="1. 拉取redis的镜像12docker pull redis:latestdocker images          ##  查看是否有redis:latest的镜像  2. 宿主机创建数据目录12mkdir -p &#x2F;home&#x2F;dockerdata&#x2F;redis&#x2F;confmkdir -p &#x2F;home&#x2F;dockerdata&#x2F;redis&#x2F;data  3. 从官网获取 redis.conf 配置文件">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811101829864.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811101928852.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102127875.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102148728.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102924763.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102400286.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102439408.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102753699.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103318530.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103357410.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103730749.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103819097.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103921310.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811104020757.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210810100735886.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210813155709787.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210810101800509.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811104227066.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811104256722.png">
-<meta property="og:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811112731293.png">
-<meta property="article:published_time" content="2021-08-09T10:50:19.000Z">
-<meta property="article:modified_time" content="2021-08-13T08:16:42.595Z">
+<meta property="article:published_time" content="2022-01-17T15:35:05.000Z">
+<meta property="article:modified_time" content="2022-01-17T15:53:28.616Z">
 <meta property="article:author" content="qinghu-code">
-<meta property="article:tag" content="seo 搜索优化">
+<meta property="article:tag" content="docker redis">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811101829864.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -257,14 +236,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-个人博客的seo优化" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-docker安装redis" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      个人博客的seo优化
+      docker安装redis
     </h1>
   
 
@@ -276,8 +255,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/" class="archive-article-date">
-        <time datetime="2021-08-09T10:50:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-09</time>
+<a href="/2022/01/17/docker%E5%AE%89%E8%A3%85redis/" class="archive-article-date">
+        <time datetime="2022-01-17T15:35:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-17</time>
 </a>
 
   
@@ -290,7 +269,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">293字</span>
+      <span class="post-count">343字</span>
     </span>
   </span>
 
@@ -310,64 +289,17 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="1-什么是seo"><a href="#1-什么是seo" class="headerlink" title="1. 什么是seo"></a>1. 什么是seo</h3><ul>
-<li>seo即Search Engine Optimization ，搜索引擎优化是一种利用搜索引擎的搜索规则来提高目前网站在有关搜索引擎内的自然排名的方式。SEO的目的理解是：为网站提供生态式的自我营销解决方案，让网站在行业内占据领先地位。在我们的博客这里，由于是个人网页，且基于github pages而搭建，百度爬虫爬取不到我们的博客网页，为了让百度等国内搜索引擎能搜索到，所以做seo优化还是有必要。</li>
-</ul>
-<span id="more"></span>
+    <h3 id="1-拉取redis的镜像"><a href="#1-拉取redis的镜像" class="headerlink" title="1. 拉取redis的镜像"></a>1. 拉取redis的镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis:latest</span><br><span class="line">docker images          ##  查看是否有redis:latest的镜像</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-基于coding平台，搭建博客项目"><a href="#2-基于coding平台，搭建博客项目" class="headerlink" title="2. 基于coding平台，搭建博客项目"></a>2. 基于coding平台，搭建博客项目</h3><blockquote>
-<ol>
-<li><p>首先创建项目</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811101829864.png" alt="image-20210811101829864"></p>
-</li>
-<li><p>创建仓库，注意命名方式 yourname.coding.me</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811101928852.png" alt="image-20210811101928852"></p>
-</li>
-<li><p>将coding仓库和github的博客仓库同步</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102127875.png" alt="image-20210811102127875"></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102148728.png" alt="image-20210811102148728"></p>
-</li>
-<li><p>添加ssh 公钥</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102924763.png" alt="image-20210811102924763"></p>
-</li>
-<li><p>项目托管</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102400286.png" alt="image-20210811102400286"></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102439408.png" alt="image-20210811102439408"></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811102753699.png" alt="image-20210811102753699"></p>
-</li>
-<li><p>自定义域名</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103318530.png" alt="image-20210811103318530"></p>
-<p>绑定自己的域名</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103357410.png" alt="image-20210811103357410"></p>
-<p>进入<a target="_blank" rel="noopener" href="https://console.dnspod.cn/dns/list">DNS解析管理平台</a></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103730749.png" alt="image-20210811103730749"></p>
-<p>添加记录</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103819097.png" alt="image-20210811103819097"></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811103921310.png" alt="image-20210811103921310"></p>
-<p>查看效果</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811104020757.png" alt="image-20210811104020757"></p>
-</li>
-</ol>
-</blockquote>
-<h3 id="3-将个人博客添加到百度站长平台"><a href="#3-将个人博客添加到百度站长平台" class="headerlink" title="3. 将个人博客添加到百度站长平台"></a>3. 将个人博客添加到百度站长平台</h3><blockquote>
-<ul>
-<li><p> <a target="_blank" rel="noopener" href="https://ziyuan.baidu.com/site/index">百度站长</a></p>
-</li>
-<li><p>添加网站</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210810100735886.png" alt="image-20210810100735886"></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210813155709787.png" alt="image-20210813155709787"></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210810101800509.png" alt="image-20210810101800509"></p>
-</li>
-<li><p>将meta 这个字段加入到hexo主题的header.ejs 中</p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811104227066.png" alt="image-20210811104227066"></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811104256722.png" alt="image-20210811104256722"></p>
-<p><strong>如果验证不了，可以选择使用文件验证</strong></p>
-<p><img src="/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/image-20210811112731293.png" alt="image-20210811112731293"></p>
-<p>添加验证</p>
-</li>
-</ul>
-</blockquote>
-<h4 id><a href="#" class="headerlink" title></a></h4>
+<h3 id="2-宿主机创建数据目录"><a href="#2-宿主机创建数据目录" class="headerlink" title="2. 宿主机创建数据目录"></a>2. 宿主机创建数据目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /home/dockerdata/redis/conf</span><br><span class="line">mkdir -p /home/dockerdata/redis/data</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-从官网获取-redis-conf-配置文件并配置"><a href="#3-从官网获取-redis-conf-配置文件并配置" class="headerlink" title="3. 从官网获取 redis.conf 配置文件并配置"></a>3. 从官网获取 <a target="_blank" rel="noopener" href="http://download.redis.io/redis-stable/redis.conf">redis.conf</a> 配置文件并配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cd /home/dockerdate/redis/conf   //进入目录</span><br><span class="line">wget http://download.redis.io/redis-stable/redis.conf   //下载redis配置文件</span><br><span class="line">vim redis.conf  //修改配置文件</span><br><span class="line"></span><br><span class="line">bind 127.0.0.1 #注释掉这部分，这是限制redis只能本地访问</span><br><span class="line">protected-mode no #默认yes，开启保护模式，限制为本地访问</span><br><span class="line">daemonize no#默认no，改为yes意为以守护进程方式启动，可后台运行，除非kill进程（可选），改为yes会使配置文件方式启动redis失败</span><br><span class="line">dir  ./ #输入本地redis数据库存放文件夹（可选）</span><br><span class="line">appendonly yes #redis持久化（可选）</span><br><span class="line">requirepass 123456  # 设置密码</span><br><span class="line">保存退出</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-启动容器并挂载目录"><a href="#4-启动容器并挂载目录" class="headerlink" title="4. 启动容器并挂载目录"></a>4. 启动容器并挂载目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 6379:6379 --name redis -v /home/dockerdata/redis/conf/redis.conf:/etc/redis/redis.conf -v /home/dockerdata/redis/data:/data -d redis redis-server /etc/redis/redis.conf --appendonly yes</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> redis-server /etc/redis/redis.conf  以配置文件启动redis，加载容器内的conf文件，最终找到的是挂载的目录/home/docker..</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> appendonly yes 开启redis 持久化</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-查看redis各项配置"><a href="#5-查看redis各项配置" class="headerlink" title="5.查看redis各项配置"></a>5.查看redis各项配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker ps # 查看运行中容器 #docker restart contianerId/name重启容器 docker logs containerId查看容器启动失败日志</span><br><span class="line">docker exec -it contianerId /bin/bash       # 进入容器</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
     
 
     
@@ -381,7 +313,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2021/08/09/个人博客的seo优化/" title="个人博客的seo优化" target="_blank">http://example.com/2021/08/09/个人博客的seo优化/</a>
+          <a href="http://example.com/2022/01/17/docker安装redis/" title="docker安装redis" target="_blank">http://example.com/2022/01/17/docker安装redis/</a>
         </li>
         
         <li>
@@ -403,7 +335,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">seo 搜索优化</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">docker redis</a>
         		</li>
       		
 		</ul>
@@ -459,7 +391,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/08/09/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84seo%E4%BC%98%E5%8C%96/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/01/17/docker%E5%AE%89%E8%A3%85redis/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -474,18 +406,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2021/08/13/imageX%E5%9B%BE%E5%83%8F%E5%8E%8B%E7%BC%A9%E6%8A%80%E6%9C%AF%E4%BD%93%E9%AA%8C%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          iamgeX图像压缩技术体验总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">github pages + hexo 个人博客搭建总结</div>
+    <a href="/2022/01/17/docker-%E5%AE%89%E8%A3%85-mysql5-7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">docker 安装 mysql5.7</div>
       <i class="icon-circle-right"></i>
     </a>
   
