@@ -238,6 +238,101 @@
             
 
   
+    <article id="post-docker-安装-mysql5-7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/01/17/docker-%E5%AE%89%E8%A3%85-mysql5-7/" target="_blank">docker 安装 mysql5.7</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/01/17/docker-%E5%AE%89%E8%A3%85-mysql5-7/" class="archive-article-date">
+        <time datetime="2022-01-17T14:32:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-17</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="1-拉取mysql5-7的镜像"><a href="#1-拉取mysql5-7的镜像" class="headerlink" title="1. 拉取mysql5.7的镜像"></a>1. 拉取mysql5.7的镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql:5.7</span><br><span class="line">docker images          ##  查看是否有mysql5.7的镜像</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-宿主机创建数据目录"><a href="#2-宿主机创建数据目录" class="headerlink" title="2. 宿主机创建数据目录"></a>2. 宿主机创建数据目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /home/dockerdata/mysql/conf</span><br><span class="line">mkdir -p /home/dockerdata/mysql/logs</span><br><span class="line">mkdir -p /home/dockerdata/mysql/mysql</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-初始化mysql配置文件"><a href="#3-初始化mysql配置文件" class="headerlink" title="3. 初始化mysql配置文件"></a>3. 初始化mysql配置文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">cd /home/dockerdata/mysql/conf/</span><br><span class="line">vi my.cnf</span><br><span class="line"></span><br><span class="line">[client]    </span><br><span class="line">default-character-set=utf8   #  更改默认编码方式</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">pid-file	= /var/run/mysqld/mysqld.pid</span><br><span class="line">socket		= /var/run/mysqld/mysqld.sock</span><br><span class="line">datadir		= /var/lib/mysql</span><br><span class="line"><span class="meta">#</span><span class="bash">log-error	= /var/<span class="built_in">log</span>/mysql/error.log</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Disabling symbolic-links is recommended to prevent assorted security risks</span></span><br><span class="line">symbolic-links=0</span><br><span class="line"></span><br><span class="line">default-time_zone = &#x27;+8:00&#x27;     # 更改默认时区 东八区</span><br><span class="line"></span><br><span class="line">default-storage-engine=INNODB    </span><br><span class="line">character-set-server=utf8   </span><br><span class="line">collation-server=utf8_general_ci  # 更改默认编码方式</span><br><span class="line"></span><br><span class="line">max_connections = 2000</span><br><span class="line">max_user_connections = 1900</span><br><span class="line">max_connect_errors = 100000</span><br><span class="line">max_allowed_packet = 50M</span><br><span class="line">lower_case_table_names=1</span><br><span class="line">[mysqld]</span><br><span class="line">skip-name-resolve</span><br><span class="line">sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span><br><span class="line"></span><br><span class="line">保存退出</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-启动容器并挂载目录"><a href="#4-启动容器并挂载目录" class="headerlink" title="4. 启动容器并挂载目录"></a>4. 启动容器并挂载目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3306:3306 --name mysql5.7 -v /home/dockerdata/mysql/conf/my.cnf:/etc/mysql/my.cnf -v /home/dockerdata/mysql/logs:/logs -v /home/dockerdata/mysql/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-查看mysql各项配置"><a href="#5-查看mysql各项配置" class="headerlink" title="5.查看mysql各项配置"></a>5.查看mysql各项配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker ps # 查看运行中容器 #docker restart contianerId/name重启容器 docker logs containerId查看容器启动失败日志</span><br><span class="line">docker exec -it contianerId /bin/bash       # 进入容器</span><br><span class="line">mysql -uroot -p123456</span><br><span class="line">show variables like &#x27;character_set_%&#x27;   # 查看mysql的默认编码方式</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">select curtime();  #或select now()也可以查看默认时间</span><br><span class="line">show variables like &quot;%time_zone%&quot;; </span><br><span class="line"><span class="meta">#</span><span class="bash">time_zone说明mysql使用system的时区，system_time_zone说明system使用UTC/GMT/CST等时区</span></span><br><span class="line"><span class="meta">#</span><span class="bash">可以通过mysql命令行模式下动态修改</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">set</span> global time_zone = <span class="string">&#x27;+8:00&#x27;</span>; <span class="comment">##修改mysql全局时区为北京时间，即我们所在的东8区</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">set</span> time_zone = <span class="string">&#x27;+8:00&#x27;</span>; <span class="comment">##修改当前会话时区</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">flush privileges; <span class="comment">#立即生效</span></span></span><br></pre></td></tr></table></figure>
+
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">docker mysql5.7</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/01/17/docker-%E5%AE%89%E8%A3%85-mysql5-7/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-通过fileHttpServer项目建立自己的私人文件服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -855,6 +950,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">文件服务器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">docker mysql5.7</a>
               </li>
             
             <div class="clearfix"></div>
