@@ -238,124 +238,6 @@
             
 
   
-    <article id="post-elasticsearch-下载安装教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="1-下载资源"><a href="#1-下载资源" class="headerlink" title="1. 下载资源"></a>1. 下载资源</h3><blockquote>
-<p>华为云镜像  选择 7.6.1版本</p>
-<p>ElasticSearch: <a target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/elasticsearch/?C=N&amp;O=D">https://mirrors.huaweicloud.com/elasticsearch/?C=N&amp;O=D</a><br>logstash: <a target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/logstash/?C=N&amp;O=D">https://mirrors.huaweicloud.com/logstash/?C=N&amp;O=D</a><br>kibana: <a target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/kibana/?C=N&amp;O=D">https://mirrors.huaweicloud.com/kibana/?C=N&amp;O=D</a></p>
-</blockquote>
-<h3 id="2-下载-ik分词器"><a href="#2-下载-ik分词器" class="headerlink" title="2. 下载 ik分词器"></a>2. 下载 ik分词器</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-ik">elasticsearch-analysis-ik</a> :  <a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v7.6.1">https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v7.6.1</a></p>
-</blockquote>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311230100583.png" alt="image-20220311230100583"></p>
-<blockquote>
-<h4 id="在tags中选择对应版本工具"><a href="#在tags中选择对应版本工具" class="headerlink" title="在tags中选择对应版本工具"></a>在tags中选择对应版本工具</h4></blockquote>
-<h3 id="3-下载elasticsearch-head项目"><a href="#3-下载elasticsearch-head项目" class="headerlink" title="3. 下载elasticsearch-head项目"></a>3. 下载elasticsearch-head项目</h3><blockquote>
-<p>es-head : <a target="_blank" rel="noopener" href="https://github.com/mobz/elasticsearch-head">https://github.com/mobz/elasticsearch-head</a></p>
-</blockquote>
-<h4 id="选择最新版本就行"><a href="#选择最新版本就行" class="headerlink" title="选择最新版本就行"></a>选择最新版本就行</h4><h3 id="4-安装流程"><a href="#4-安装流程" class="headerlink" title="4. 安装流程"></a>4. 安装流程</h3><ol>
-<li><p>将压缩包解压 到一个elasticsearch文件夹下</p>
-<blockquote>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311230635774.png" alt="image-20220311230635774"></p>
-</blockquote>
-</li>
-<li><p>将 ik分词器 解压到 elasticsearch文件夹的plugins 下</p>
-<blockquote>
-<p>ik分词器是一款中文分词器 版本必须和es相同 否则打不开</p>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311230759057.png" alt="image-20220311230759057"></p>
-<p>打开 ik分词器的 配置文件</p>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311231026765.png" alt="image-20220311231026765"></p>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311231049993.png" alt="image-20220311231049993"></p>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311231115817.png" alt="image-20220311231115817"></p>
-<p>将自己的常用词字典导入， 可以将避免被分割 </p>
-<p>ik分词器两种模式 </p>
-<p>GET _analyze<br>{<br>“analyzer”: “ik_max_word”,   最大分片数来分 ：  美利坚 -&gt; 美，利，坚<br>“text”: “长沙理工大学”<br>}</p>
-<p>GET _analyze<br>{<br>“analyzer”: “ik_smart”, 最小分片数来分  ：      美利坚 -&gt; 美利坚<br>“text”: “长沙理工大学”<br>}</p>
-</blockquote>
-</li>
-<li><p> 设置 es 配置 允许跨域访问</p>
-</li>
-</ol>
-<blockquote>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311231608186.png" alt="image-20220311231608186"></p>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311231630448.png" alt="image-20220311231630448"></p>
-</blockquote>
-<ol start="4">
-<li><p>设置kibana的 中文显示</p>
-<blockquote>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311231757297.png" alt="image-20220311231757297"></p>
-<p>可以看到kibana有国际化配置 需要去配置文件中使用</p>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311231853272.png" alt="image-20220311231853272"></p>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311231907080.png" alt="image-20220311231907080"></p>
-</blockquote>
-</li>
-<li><p>启动各个组件并简单使用</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">es : 打开 bin目录 双击 elasticsearch.bat   端口地址 <span class="number">9200</span></span><br><span class="line">es-head: 进入 es-head目录下 打开 cmd   cnpm run start   端口地址 <span class="number">9100</span></span><br><span class="line">kibana: 进入bin目录 双击 kibana.bat  端口地址 <span class="number">5601</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>es-head 可以可视化es的各种数据 可以作为方便的管理工具</p>
-<blockquote>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311232419967.png" alt="image-20220311232419967"></p>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311232449274.png" alt="image-20220311232449274"></p>
-</blockquote>
-</li>
-<li><p>kibana 也是一种es的可视化管理工具 这里主要使用它的 devTools</p>
-<blockquote>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311232623689.png" alt="image-20220311232623689"></p>
-<p><img src="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311232650798.png" alt="image-20220311232650798"></p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ol>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/03/11/elasticsearch-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-elasticsearch的下载安装教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -392,7 +274,7 @@
 <h3 id="2-下载-ik分词器"><a href="#2-下载-ik分词器" class="headerlink" title="2. 下载 ik分词器"></a>2. 下载 ik分词器</h3><blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-ik">elasticsearch-analysis-ik</a> :  <a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v7.6.1">https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v7.6.1</a></p>
 </blockquote>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch-下载安装教程\image-20220311230100583.png" alt="image-20220311230100583"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311230100583.png" alt="image-20220311230100583"></p>
 <blockquote>
 <h4 id="在tags中选择对应版本工具"><a href="#在tags中选择对应版本工具" class="headerlink" title="在tags中选择对应版本工具"></a>在tags中选择对应版本工具</h4></blockquote>
 <h3 id="3-下载elasticsearch-head项目"><a href="#3-下载elasticsearch-head项目" class="headerlink" title="3. 下载elasticsearch-head项目"></a>3. 下载elasticsearch-head项目</h3><blockquote>
@@ -401,17 +283,17 @@
 <h4 id="选择最新版本就行"><a href="#选择最新版本就行" class="headerlink" title="选择最新版本就行"></a>选择最新版本就行</h4><h3 id="4-安装流程"><a href="#4-安装流程" class="headerlink" title="4. 安装流程"></a>4. 安装流程</h3><ol>
 <li><p>将压缩包解压 到一个elasticsearch文件夹下</p>
 <blockquote>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch的下载安装教程\image-20220311230635774.png" alt="image-20220311230635774"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311230635774.png" alt="image-20220311230635774"></p>
 </blockquote>
 </li>
 <li><p>将 ik分词器 解压到 elasticsearch文件夹的plugins 下</p>
 <blockquote>
 <p>ik分词器是一款中文分词器 版本必须和es相同 否则打不开</p>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch的下载安装教程\image-20220311230759057.png" alt="image-20220311230759057"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311230759057.png" alt="image-20220311230759057"></p>
 <p>打开 ik分词器的 配置文件</p>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch的下载安装教程\image-20220311231026765.png" alt="image-20220311231026765"></p>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch的下载安装教程\image-20220311231049993.png" alt="image-20220311231049993"></p>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch的下载安装教程\image-20220311231115817.png" alt="image-20220311231115817"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231026765.png" alt="image-20220311231026765"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231049993.png" alt="image-20220311231049993"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231115817.png" alt="image-20220311231115817"></p>
 <p>将自己的常用词字典导入， 可以将避免被分割 </p>
 <p>ik分词器两种模式 </p>
 <p>GET _analyze<br>{<br>“analyzer”: “ik_max_word”,   最大分片数来分 ：  美利坚 -&gt; 美，利，坚<br>“text”: “长沙理工大学”<br>}</p>
@@ -420,16 +302,16 @@
 </li>
 <li><p>设置 es 配置 允许跨域访问</p>
 <blockquote>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch的下载安装教程\image-20220311231608186.png" alt="image-20220311231608186"></p>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch的下载安装教程\image-20220311231630448.png" alt="image-20220311231630448"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231608186.png" alt="image-20220311231608186"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231630448.png" alt="image-20220311231630448"></p>
 </blockquote>
 </li>
 <li><p>设置kibana的 中文显示</p>
 <blockquote>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch的下载安装教程\image-20220311231757297.png" alt="image-20220311231757297"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231757297.png" alt="image-20220311231757297"></p>
 <p>可以看到kibana有国际化配置 需要去配置文件中使用</p>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch的下载安装教程\image-20220311231853272.png" alt="image-20220311231853272"></p>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch的下载安装教程\image-20220311231907080.png" alt="image-20220311231907080"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231853272.png" alt="image-20220311231853272"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231907080.png" alt="image-20220311231907080"></p>
 </blockquote>
 </li>
 <li><p>启动各个组件并简单使用</p>
@@ -438,14 +320,14 @@
 <ul>
 <li><p>es-head 可以可视化es的各种数据 可以作为方便的管理工具</p>
 <blockquote>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch的下载安装教程\image-20220311232419967.png" alt="image-20220311232419967"></p>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch的下载安装教程\image-20220311232449274.png" alt="image-20220311232449274"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311232419967.png" alt="image-20220311232419967"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311232449274.png" alt="image-20220311232449274"></p>
 </blockquote>
 </li>
 <li><p>kibana 也是一种es的可视化管理工具 这里主要使用它的 devTools</p>
 <blockquote>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch的下载安装教程\image-20220311232623689.png" alt="image-20220311232623689"></p>
-<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/myBlob\source_posts\elasticsearch的下载安装教程\image-20220311232650798.png" alt="image-20220311232650798"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311232623689.png" alt="image-20220311232623689"></p>
+<p><img src="/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311232650798.png" alt="image-20220311232650798"></p>
 </blockquote>
 </li>
 </ul>
@@ -608,9 +490,9 @@
 
 <blockquote>
 <h4 id="显示效果"><a href="#显示效果" class="headerlink" title="显示效果"></a>显示效果</h4></blockquote>
-<p><img src="/2022/03/11/elasticsearch-%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E5%92%8C%E5%AE%89%E8%A3%85/myBlob\source_posts\elasticsearch-基本命令和安装\image-20220311225532397.png" alt="image-20220311225532397"></p>
-<p><img src="/2022/03/11/elasticsearch-%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E5%92%8C%E5%AE%89%E8%A3%85/myBlob\source_posts\elasticsearch-基本命令和安装\image-20220311225447612.png" alt="image-20220311225447612"></p>
-<p><img src="/2022/03/11/elasticsearch-%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E5%92%8C%E5%AE%89%E8%A3%85/myBlob\source_posts\elasticsearch-基本命令和安装\image-20220311225507371.png" alt="image-20220311225507371"></p>
+<p><img src="/2022/03/11/elasticsearch-%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E5%92%8C%E5%AE%89%E8%A3%85/image-20220311225532397.png" alt="image-20220311225532397"></p>
+<p><img src="/2022/03/11/elasticsearch-%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E5%92%8C%E5%AE%89%E8%A3%85/image-20220311225447612.png" alt="image-20220311225447612"></p>
+<p><img src="/2022/03/11/elasticsearch-%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E5%92%8C%E5%AE%89%E8%A3%85/image-20220311225507371.png" alt="image-20220311225507371"></p>
 
     
 
@@ -1389,10 +1271,106 @@
 
 
   
+    <article id="post-github-pages-hexo 个人博客搭建总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/" target="_blank">github pages + hexo 个人博客搭建总结</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/" class="archive-article-date">
+        <time datetime="2021-08-09T06:17:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-09</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h3><blockquote>
+<ol>
+<li>前往<a target="_blank" rel="noopener" href="https://nodejs.org/en">node官网</a>下载  版本 ：windows(x64) 14.17.4 LTS   hexo是基于node.js的博客框架</li>
+<li>前往<a target="_blank" rel="noopener" href="https://git-scm.com/">git官网</a>下载 版本：windows Git-2.32.0.2-64-bit.exe  目前主流的版本控制工具</li>
+<li>前往<a target="_blank" rel="noopener" href="https://www.typora.io/">Typora官网</a> 版本选择最新即可 用来编写md文档</li>
+</ol>
+</blockquote>
+<h3 id="2-测试安装成功"><a href="#2-测试安装成功" class="headerlink" title="2.测试安装成功"></a>2.测试安装成功</h3><blockquote>
+<p>git version</p>
+<p>node -v</p>
+<p>npm -v </p>
+<p>能看到相关版本号即为成功</p>
+</blockquote>
+    
+    <a class="article-more-a" href="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">总结 记录</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/08/09/github-pages-hexo%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
 
 
