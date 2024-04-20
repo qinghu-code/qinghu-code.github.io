@@ -6,25 +6,25 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://example.com">
-  <title>通过fileHttpServer项目搭建自己的私人文件服务器 | Hexo</title>
+  <link rel="dns-prefetch" href="http://qinghu-code.github.io">
+  <title>通过fileHttpServer项目搭建自己的私人文件服务器 | 青湖</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="1. 首先安装golang环境  下载go安装包   (如果之前安装过golang  可以先卸载 yum -y remove golang)  1wget -c https:&#x2F;&#x2F;storage.googleapis.com&#x2F;golang&#x2F;go1.11.5.linux-amd64.tar.gz   解压到 &#x2F;user&#x2F;local&#x2F;目录下  1tar -C &#x2F;usr&#x2F;local&#x2F; -zxvf go1.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="通过fileHttpServer项目搭建自己的私人文件服务器">
-<meta property="og:url" content="http://example.com/2022/01/16/%E9%80%9A%E8%BF%87fileHttpServer%E9%A1%B9%E7%9B%AE%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E4%BA%BA%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="http://qinghu-code.github.io/2022/01/16/%E9%80%9A%E8%BF%87fileHttpServer%E9%A1%B9%E7%9B%AE%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E4%BA%BA%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
+<meta property="og:site_name" content="青湖">
 <meta property="og:description" content="1. 首先安装golang环境  下载go安装包   (如果之前安装过golang  可以先卸载 yum -y remove golang)  1wget -c https:&#x2F;&#x2F;storage.googleapis.com&#x2F;golang&#x2F;go1.11.5.linux-amd64.tar.gz   解压到 &#x2F;user&#x2F;local&#x2F;目录下  1tar -C &#x2F;usr&#x2F;local&#x2F; -zxvf go1.">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale">
 <meta property="article:published_time" content="2022-01-16T04:28:03.000Z">
 <meta property="article:modified_time" content="2022-01-16T05:44:32.485Z">
 <meta property="article:author" content="qinghu-code">
 <meta property="article:tag" content="文件服务器">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="青湖" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -120,7 +120,7 @@
 				
 					
 						<a class="gitee" href="https://gitee.com/qinghu-code" 
-												title="gitee" target="_blank"><i class="icon-gitee"></i></a>
+												title="码云" target="_blank"><i class="icon-gitee"></i></a>
 					
 				
 					
@@ -130,7 +130,7 @@
 				
 					
 						<a class="mail" href="/2519148279@qq.com" 
-												title="Email" target="_blank"><i class="icon-mail"></i></a>
+												title="邮件联系" target="_blank"><i class="icon-mail"></i></a>
 					
 				
 			</div>
@@ -196,7 +196,7 @@
 					
 						
 						<a class="gitee" target="_blank" 
-							href="https://gitee.com/qinghu-code" title="gitee"><i class="icon-gitee"></i></a>
+							href="https://gitee.com/qinghu-code" title="码云"><i class="icon-gitee"></i></a>
 						
 					
 						
@@ -206,7 +206,7 @@
 					
 						
 						<a class="mail" target="_blank" 
-							href="/2519148279@qq.com" title="Email"><i class="icon-mail"></i></a>
+							href="/2519148279@qq.com" title="邮件联系"><i class="icon-mail"></i></a>
 						
 					
 				</div>
@@ -372,7 +372,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2022/01/16/通过fileHttpServer项目建立自己的私人文件服务器/" title="通过fileHttpServer项目搭建自己的私人文件服务器" target="_blank">http://example.com/2022/01/16/通过fileHttpServer项目建立自己的私人文件服务器/</a>
+          <a href="http://qinghu-code.github.io/2022/01/16/通过fileHttpServer项目建立自己的私人文件服务器/" title="通过fileHttpServer项目搭建自己的私人文件服务器" target="_blank">http://qinghu-code.github.io/2022/01/16/通过fileHttpServer项目建立自己的私人文件服务器/</a>
         </li>
         
         <li>
@@ -450,7 +450,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/01/16/%E9%80%9A%E8%BF%87fileHttpServer%E9%A1%B9%E7%9B%AE%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E4%BA%BA%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://qinghu-code.github.io/2022/01/16/%E9%80%9A%E8%BF%87fileHttpServer%E9%A1%B9%E7%9B%AE%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A7%81%E4%BA%BA%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -519,7 +519,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021-2024 <a href="http://example.com/" target="_blank">qinghu-code</a>
+    		&copy; 2021-2024 <a href="http://qinghu-code.github.io/" target="_blank">qinghu-code</a>
     	</div>
       	<div class="footer-right">
 			

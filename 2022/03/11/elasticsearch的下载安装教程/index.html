@@ -6,41 +6,41 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://example.com">
-  <title>elasticsearch的下载安装教程 | Hexo</title>
+  <link rel="dns-prefetch" href="http://qinghu-code.github.io">
+  <title>elasticsearch的下载安装教程 | 青湖</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="1. 下载资源 华为云镜像  选择 7.6.1版本 ElasticSearch: https:&#x2F;&#x2F;mirrors.huaweicloud.com&#x2F;elasticsearch&#x2F;?C&#x3D;N&amp;O&#x3D;Dlogstash: https:&#x2F;&#x2F;mirrors.huaweicloud.com&#x2F;logstash&#x2F;?C&#x3D;N&amp;O&#x3D;Dkibana: https:&#x2F;&#x2F;mirrors.huaweicloud.co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="elasticsearch的下载安装教程">
-<meta property="og:url" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="青湖">
 <meta property="og:description" content="1. 下载资源 华为云镜像  选择 7.6.1版本 ElasticSearch: https:&#x2F;&#x2F;mirrors.huaweicloud.com&#x2F;elasticsearch&#x2F;?C&#x3D;N&amp;O&#x3D;Dlogstash: https:&#x2F;&#x2F;mirrors.huaweicloud.com&#x2F;logstash&#x2F;?C&#x3D;N&amp;O&#x3D;Dkibana: https:&#x2F;&#x2F;mirrors.huaweicloud.co">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311230100583.png">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311230635774.png">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311230759057.png">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231026765.png">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231049993.png">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231115817.png">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231608186.png">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231630448.png">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231757297.png">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231853272.png">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231907080.png">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311232419967.png">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311232449274.png">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311232623689.png">
-<meta property="og:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311232650798.png">
+<meta property="og:locale">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311230100583.png">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311230635774.png">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311230759057.png">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231026765.png">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231049993.png">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231115817.png">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231608186.png">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231630448.png">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231757297.png">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231853272.png">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311231907080.png">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311232419967.png">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311232449274.png">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311232623689.png">
+<meta property="og:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311232650798.png">
 <meta property="article:published_time" content="2022-03-11T15:28:49.000Z">
 <meta property="article:modified_time" content="2022-03-12T11:19:40.574Z">
 <meta property="article:author" content="qinghu-code">
 <meta property="article:tag" content="elasticsearch 下载 安装 教程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311230100583.png">
+<meta name="twitter:image" content="http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220311230100583.png">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="青湖" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -136,7 +136,7 @@
 				
 					
 						<a class="gitee" href="https://gitee.com/qinghu-code" 
-												title="gitee" target="_blank"><i class="icon-gitee"></i></a>
+												title="码云" target="_blank"><i class="icon-gitee"></i></a>
 					
 				
 					
@@ -146,7 +146,7 @@
 				
 					
 						<a class="mail" href="/2519148279@qq.com" 
-												title="Email" target="_blank"><i class="icon-mail"></i></a>
+												title="邮件联系" target="_blank"><i class="icon-mail"></i></a>
 					
 				
 			</div>
@@ -212,7 +212,7 @@
 					
 						
 						<a class="gitee" target="_blank" 
-							href="https://gitee.com/qinghu-code" title="gitee"><i class="icon-gitee"></i></a>
+							href="https://gitee.com/qinghu-code" title="码云"><i class="icon-gitee"></i></a>
 						
 					
 						
@@ -222,7 +222,7 @@
 					
 						
 						<a class="mail" target="_blank" 
-							href="/2519148279@qq.com" title="Email"><i class="icon-mail"></i></a>
+							href="/2519148279@qq.com" title="邮件联系"><i class="icon-mail"></i></a>
 						
 					
 				</div>
@@ -385,7 +385,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2022/03/11/elasticsearch的下载安装教程/" title="elasticsearch的下载安装教程" target="_blank">http://example.com/2022/03/11/elasticsearch的下载安装教程/</a>
+          <a href="http://qinghu-code.github.io/2022/03/11/elasticsearch的下载安装教程/" title="elasticsearch的下载安装教程" target="_blank">http://qinghu-code.github.io/2022/03/11/elasticsearch的下载安装教程/</a>
         </li>
         
         <li>
@@ -463,7 +463,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://qinghu-code.github.io/2022/03/11/elasticsearch%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -532,7 +532,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021-2024 <a href="http://example.com/" target="_blank">qinghu-code</a>
+    		&copy; 2021-2024 <a href="http://qinghu-code.github.io/" target="_blank">qinghu-code</a>
     	</div>
       	<div class="footer-right">
 			
